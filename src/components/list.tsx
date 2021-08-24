@@ -6,10 +6,11 @@ const MyList = () => {
 
     const list = Store.backend.items
     // const price = Store.backend.price
+    let id = 1
     return (
         <div className="my-container">
             {list.map(list => (
-                <div className="list-item">{list}</div>
+                <div className="list-item">{id++}. {list}</div>
             ))}
         </div>
     )

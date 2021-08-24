@@ -4,12 +4,10 @@ import MyList from "./components/list"
 import Backend from './store/backend';
 
 function App({ backend }: { backend: Backend }) {
-  
   return (
     <div className="App">
-      <button className="btn"  onClick={e => {
+      <button className="btn" onClick={e => {
         backend.fetch()
-        console.log('click')
       }}>
         кнопка
       </button>

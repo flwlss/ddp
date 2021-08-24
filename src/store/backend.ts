@@ -8,11 +8,10 @@ export default class Backend {
     server: any
     items: any[] = []
     tempItems: any[] = [];
-    
+
     price: any[] = []
     tempPrice: any[] = [];
 
-    
     constructor() {
         let opts = {
             endpoint: "ws://cloud.astrapos.ru/websocket",
@@ -36,10 +35,10 @@ export default class Backend {
                 // })
                 this.server.collection('products').onChange((a: any) => {
 
-                  //  a.added.id.push(items)
-                    this.tempItems.push(a.added.Name,a.added.Price +' р.')
-                    //this.tempPrice.push(a.added.Price)
-                    
+                    //  a.added.id.push(items)
+                    this.tempItems.push(a.added.Name + ' - ' + a.added.Price + 'р.')
+                    this.tempPrice.push(a.added.Price)
+
                     console.log('id = ', a);
                     console.log("name = ", a.added.id);
                     console.log('price = ', a.added.Price);
@@ -47,9 +46,9 @@ export default class Backend {
             }
         )();
 
-        makeObservable(this, {items: observable})
-        makeObservable(this, {price: observable})
-        
+        makeObservable(this, { items: observable })
+        makeObservable(this, { price: observable })
+
     }
     async fetch() {
         let userSub = this.server.subscribe("products");
@@ -60,8 +59,4 @@ export default class Backend {
             this.price = this.tempPrice
         })
     }
-    getItem(){
-        
-    }
-
 }
