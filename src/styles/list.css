@@ -1,21 +1,22 @@
 .my-container {
     width: 100%;
-    background: white;
-    
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* gap: 10px; */
+   
+  
 }
-
-.item-wrapper {
-    
-    
-}
-
-.list-item,.price-item {
+.list-item {
     display: inline-block;
     background: rgb(138, 43, 226);
-    margin: 1% 1%;
+    margin: 1% 2%;
     padding: 1% 1%;
     border-radius: 50px;
     color: white;
-    font-size: 20px;
+    font-size: 16px;
     border: 2px solid rgb(53, 12, 90);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

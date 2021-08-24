@@ -11,6 +11,7 @@ export default class Backend {
     
     price: any[] = []
     tempPrice: any[] = [];
+
     
     constructor() {
         let opts = {
@@ -36,8 +37,8 @@ export default class Backend {
                 this.server.collection('products').onChange((a: any) => {
 
                   //  a.added.id.push(items)
-                    this.tempItems.push(a.added.Name)
-                    this.tempPrice.push(a.added.Price)
+                    this.tempItems.push(a.added.Name,a.added.Price +' р.')
+                    //this.tempPrice.push(a.added.Price)
                     
                     console.log('id = ', a);
                     console.log("name = ", a.added.id);
