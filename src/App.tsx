@@ -1,22 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import MyList from "./components/list"
+import Backend from './store/backend';
 
-function App({ store }: { store: any }) {
+function App({ backend }: { backend: Backend }) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <button onClick={e => {
-          store.fetch()
-          console.log('click')
-        }}>
-          кнопка
-        </button>
-      </header>
+      <button className="btn" onClick={e => {
+        backend.fetch()
+        console.log('click')
+      }}>
+        кнопка
+      </button>
+      <MyList />
     </div>
   );
 }

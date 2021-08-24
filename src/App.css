@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+.btn {
+  margin-top: 50px;
+  /* background: rgb(149, 148, 153);
+  width: 10vw;
+  color: white;
+  text-transform: uppercase;
+  padding: 5px 5px;
+  letter-spacing: 0.1rem; */
+}

@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Backend from './store/index'
+import {Store} from './store/index'
 
-const backend = new Backend();
+const fake: any = window;
+fake.backend = Store;
 
 ReactDOM.render(
   <React.StrictMode>
-    <App store={backend} />
+    <App backend={Store.backend} />
 
   </React.StrictMode>,
   document.getElementById('root')
